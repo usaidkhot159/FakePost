@@ -1,0 +1,617 @@
+/* =============================================
+   POST THEMES — shared post structure styles
+   ============================================= */
+
+.post-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+  width: 100%;
+}
+
+.post-placeholder-img {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.post-placeholder-img i {
+  font-size: 32px;
+  opacity: 0.4;
+}
+
+.post-placeholder-img span {
+  opacity: 0.4;
+}
+
+.post-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =============================================
+   INSTAGRAM
+   ============================================= */
+.ig-post {
+  background: #fff;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ig-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #efefef;
+}
+
+.ig-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 1.5px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  flex-shrink: 0;
+}
+
+.ig-avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  padding: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ig-avatar-inner img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ig-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #c7c7c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+}
+
+.ig-user-info { flex: 1; }
+.ig-username { font-size: 13px; font-weight: 600; line-height: 1.2; color: #000; }
+.ig-subline { font-size: 11px; color: #8e8e8e; }
+
+.ig-more {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ig-image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #fafafa;
+  overflow: hidden;
+  position: relative;
+}
+
+.ig-actions {
+  padding: 10px 12px 6px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ig-action-icon {
+  font-size: 22px;
+  color: #000;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.ig-bookmark {
+  margin-left: auto;
+}
+
+.ig-likes {
+  padding: 0 12px 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+}
+
+.ig-caption {
+  padding: 0 12px 4px;
+  font-size: 13px;
+  color: #000;
+  line-height: 1.5;
+}
+
+.ig-caption-user {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.ig-comments {
+  padding: 0 12px 8px;
+}
+
+.ig-comment {
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+.ig-comment-user {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.ig-timestamp {
+  padding: 0 12px 12px;
+  font-size: 10px;
+  color: #8e8e8e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* =============================================
+   X / TWITTER
+   ============================================= */
+.tw-post {
+  background: #000;
+  color: #e7e9ea;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 14px 16px 0;
+}
+
+.tw-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.tw-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.tw-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tw-user-meta { flex: 1; }
+
+.tw-display-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #e7e9ea;
+  line-height: 1.3;
+}
+
+.tw-handle {
+  font-size: 13px;
+  color: #71767b;
+}
+
+.tw-more {
+  font-size: 18px;
+  color: #71767b;
+  align-self: flex-start;
+}
+
+.tw-body {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #e7e9ea;
+  margin-bottom: 10px;
+}
+
+.tw-image-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  aspect-ratio: 16 / 9;
+  background: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tw-meta-row {
+  font-size: 13px;
+  color: #71767b;
+  margin-bottom: 10px;
+}
+
+.tw-metrics-row {
+  padding: 10px 0;
+  border-top: 1px solid #2f3336;
+  border-bottom: 1px solid #2f3336;
+  font-size: 13px;
+  color: #71767b;
+  display: flex;
+  gap: 20px;
+}
+
+.tw-metric strong {
+  color: #e7e9ea;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.tw-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 6px 0 4px;
+}
+
+.tw-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #71767b;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 20px;
+  transition: all 0.15s;
+}
+
+.tw-action-btn i { font-size: 17px; }
+.tw-action-btn.heart:hover { color: #f91880; }
+.tw-action-btn:hover { color: #1d9bf0; background: rgba(29,155,240,0.1); }
+
+.tw-comments {
+  border-top: 1px solid #2f3336;
+  padding: 8px 0;
+}
+
+.tw-comment {
+  font-size: 13px;
+  color: #71767b;
+  padding: 4px 0;
+}
+
+.tw-comment-user {
+  color: #e7e9ea;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* =============================================
+   FACEBOOK
+   ============================================= */
+.fb-post {
+  background: #fff;
+  color: #050505;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  border: 1px solid #dadde1;
+  border-radius: 8px;
+}
+
+.fb-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px 8px;
+}
+
+.fb-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e4e6eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #65676b;
+  flex-shrink: 0;
+}
+
+.fb-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fb-user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #050505;
+  line-height: 1.2;
+}
+
+.fb-user-meta {
+  font-size: 12px;
+  color: #65676b;
+}
+
+.fb-privacy {
+  font-size: 10px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.fb-more {
+  margin-left: auto;
+  font-size: 20px;
+  color: #65676b;
+  font-weight: 700;
+}
+
+.fb-body {
+  padding: 0 16px 10px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #050505;
+}
+
+.fb-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fb-reactions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #65676b;
+}
+
+.fb-reaction-icons { font-size: 16px; letter-spacing: -3px; }
+
+.fb-action-bar {
+  border-top: 1px solid #dadde1;
+  border-bottom: 1px solid #dadde1;
+  display: flex;
+  justify-content: space-around;
+  padding: 2px 0;
+}
+
+.fb-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #65676b;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+  justify-content: center;
+}
+
+.fb-action:hover { background: #f2f2f2; }
+.fb-action i { font-size: 18px; }
+
+.fb-comments {
+  padding: 8px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fb-comment {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.fb-comment-av {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e4e6eb;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #65676b;
+}
+
+.fb-comment-bubble {
+  background: #f0f2f5;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.fb-comment-name {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* =============================================
+   TIKTOK
+   ============================================= */
+.tt-post {
+  background: #010101;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tt-layout {
+  display: flex;
+  height: 440px;
+}
+
+.tt-video-area {
+  flex: 1;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tt-video-area img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tt-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);
+}
+
+.tt-bottom-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px;
+}
+
+.tt-username {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.tt-caption {
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.tt-audio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+}
+
+.tt-audio-disc {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #333;
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+}
+
+.tt-sidebar {
+  width: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  padding: 0 0 18px;
+  flex-shrink: 0;
+}
+
+.tt-av {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  overflow: hidden;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #aaa;
+}
+
+.tt-av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tt-side-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.tt-side-action i {
+  font-size: 22px;
+  color: #fff;
+}
+
+.tt-side-action span {
+  font-size: 10px;
+  color: rgba(255,255,255,0.8);
+}
+
+.tt-progress {
+  height: 2px;
+  background: #333;
+  position: relative;
+}
+
+.tt-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 35%;
+  background: #fe2c55;
+}
