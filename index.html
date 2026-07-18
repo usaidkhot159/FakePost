@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FakePost — Social Media Post Generator</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.10.0/dist/tabler-icons.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark">F</span>
+        <span class="logo-text">FakePost</span>
+      </div>
+      <nav class="header-nav">
+        <span class="nav-badge">Free · No signup</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Create fake social<br><span class="hero-accent">media posts</span></h1>
+      <p class="hero-sub">Design realistic-looking posts for Instagram, X, Facebook, and TikTok. Customize everything and download as PNG.</p>
+    </div>
+  </section>
+
+  <!-- MAIN APP -->
+  <main class="app-shell">
+
+    <!-- PLATFORM PICKER -->
+    <div class="platform-bar">
+      <button class="platform-btn active" data-theme="instagram" onclick="App.setTheme('instagram', this)">
+        <svg class="platform-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#f09433"/><stop offset="0.25" stop-color="#e6683c"/><stop offset="0.5" stop-color="#dc2743"/><stop offset="0.75" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#ig)" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="url(#ig)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig)"/></svg>
+        Instagram
+      </button>
+      <button class="platform-btn" data-theme="twitter" onclick="App.setTheme('twitter', this)">
+        <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X / Twitter
+      </button>
+      <button class="platform-btn" data-theme="facebook" onclick="App.setTheme('facebook', this)">
+        <svg class="platform-icon" viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </button>
+      <button class="platform-btn" data-theme="tiktok" onclick="App.setTheme('tiktok', this)">
+        <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.52V6.77a4.85 4.85 0 01-1.02-.08z"/></svg>
+        TikTok
+      </button>
+    </div>
+
+    <!-- TWO-COLUMN LAYOUT -->
+    <div class="editor-layout">
+
+      <!-- LEFT: CONTROLS -->
+      <aside class="controls-panel">
+
+        <section class="ctrl-section">
+          <h2 class="ctrl-heading">Profile</h2>
+
+          <div class="avatar-block">
+            <div class="avatar-ring" id="avatarRing">
+              <div class="avatar-circle" id="avatarCircle">
+                <span id="avatarInitials">JD</span>
+                <img id="avatarImg" src="" alt="Avatar" style="display:none;" />
+              </div>
+            </div>
+            <div class="avatar-actions">
+              <label class="upload-label" for="avatarInput">
+                <i class="ti ti-upload"></i> Upload photo
+              </label>
+              <input type="file" id="avatarInput" accept="image/*" style="display:none" />
+              <button class="btn-ghost btn-sm" id="removeAvatarBtn" style="display:none;" onclick="App.removeAvatar()">
+                <i class="ti ti-x"></i> Remove
+              </button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="username">Username</label>
+              <input type="text" id="username" value="johndoe" placeholder="username" maxlength="30" />
+            </div>
+            <div class="field">
+              <label for="displayName">Display name</label>
+              <input type="text" id="displayName" value="John Doe" placeholder="Display name" maxlength="50" />
+            </div>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="ctrl-section">
+          <h2 class="ctrl-heading">Content</h2>
+
+          <div class="field">
+            <label for="caption">Caption</label>
+            <textarea id="caption" rows="3" placeholder="Write your caption...">Living my best life ✨ #vibes #lifestyle</textarea>
+          </div>
+
+          <div class="field">
+            <label>Post image</label>
+            <label class="upload-area" for="postImgInput" id="postImgLabel">
+              <i class="ti ti-photo-plus"></i>
+              <span id="postImgText">Click to upload an image</span>
+            </label>
+            <input type="file" id="postImgInput" accept="image/*" style="display:none" />
+            <button class="btn-ghost btn-sm" id="removePostImgBtn" style="display:none; margin-top:6px;" onclick="App.removePostImage()">
+              <i class="ti ti-x"></i> Remove image
+            </button>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="ctrl-section">
+          <h2 class="ctrl-heading">Engagement</h2>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="likes">Likes</label>
+              <input type="number" id="likes" value="4287" min="0" max="9999999" />
+            </div>
+            <div class="field">
+              <label for="views">Views</label>
+              <input type="number" id="views" value="18400" min="0" max="9999999" />
+            </div>
+            <div class="field">
+              <label for="shares">Shares</label>
+              <input type="number" id="shares" value="312" min="0" max="9999999" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="timestamp">Timestamp</label>
+            <input type="text" id="timestamp" value="2h ago" placeholder="e.g. 2h ago, Just now" />
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="ctrl-section">
+          <div class="heading-row">
+            <h2 class="ctrl-heading">Comments</h2>
+            <button class="btn-ghost btn-sm" onclick="App.addComment()">
+              <i class="ti ti-plus"></i> Add
+            </button>
+          </div>
+          <div id="commentsContainer" class="comments-list"></div>
+        </section>
+
+        <div class="download-bar">
+          <button class="btn-primary" id="downloadBtn" onclick="App.download()">
+            <i class="ti ti-download"></i>
+            <span>Download as PNG</span>
+          </button>
+          <button class="btn-secondary" onclick="App.copyToClipboard()">
+            <i class="ti ti-copy"></i>
+          </button>
+        </div>
+
+      </aside>
+
+      <!-- RIGHT: PREVIEW -->
+      <div class="preview-panel">
+        <div class="preview-header">
+          <span class="preview-label">Live preview</span>
+          <div class="preview-controls">
+            <button class="preview-ctrl active" onclick="App.setPreviewBg('light', this)" title="Light background">
+              <i class="ti ti-sun"></i>
+            </button>
+            <button class="preview-ctrl" onclick="App.setPreviewBg('dark', this)" title="Dark background">
+              <i class="ti ti-moon"></i>
+            </button>
+          </div>
+        </div>
+        <div class="preview-canvas" id="previewCanvas">
+          <div id="postContainer"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>FakePost — for creative, educational &amp; entertainment use only. Please be responsible.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/utils.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
